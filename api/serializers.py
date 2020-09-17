@@ -7,7 +7,7 @@ from .models.user import User
 class SpotSerializer(serializers.ModelSerializer):
   class Meta:
     model = Spot
-    fields = ('id', 'country', 'state', 'state', 'city', 'description', 'season', 'owner')
+    fields = ('id', 'country', 'state', 'city', 'address', 'description', 'season', 'owner')
 
 class UserSerializer(serializers.ModelSerializer):
   class Meta:

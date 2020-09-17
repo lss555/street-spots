@@ -5,6 +5,7 @@ class Spot(models.Model):
   country = models.CharField(max_length=60)
   state = models.CharField(max_length=30)
   city = models.CharField(max_length=100)
+  address = models.CharField(max_length=200)
   description = models.TextField()
   owner = models.ForeignKey(
       get_user_model(),
@@ -18,7 +19,7 @@ class Spot(models.Model):
   season = models.CharField(max_length=50, blank=True, null=True, choices=SEASON_CHOICES)
 
   def __str__(self):
-    return f"Your ski spots info: country: '{self.country}' state: '{self.state}' season: '{self.season}' description: '{self.description}' city: '{self.city}'"
+    return f"Your ski spots info: country: '{self.country}' state: '{self.state}' season: '{self.season}' description: '{self.description}' city: '{self.city}' address: '{self.address}'"
 
   def as_dict(self):
     """ returns dictionary version of spot models """
@@ -27,6 +28,7 @@ class Spot(models.Model):
       'country': self.country,
       'state': self.state,
       'city': self.city,
+      'address': self.address,
       'description': self.description,
       'season': self.season
     }
