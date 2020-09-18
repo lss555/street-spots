@@ -15,7 +15,8 @@ class Spots(generics.ListCreateAPIView):
   serializer_class = SpotSerializer
   def get(self, request):
     """index request"""
-    spots = Spot.objects.filter(owner=request.user.id)
+    spots = Spot.objects.all()
+    # spots = Spot.objects.filter(owner=request.user.id)
     data = SpotSerializer(spots, many=True).data
     return Response({ 'spots': data })
 
