@@ -35,8 +35,8 @@ class SpotDetail(generics.RetrieveUpdateDestroyAPIView):
   def get(self, request, pk):
     """Show request"""
     spot = get_object_or_404(Spot, pk=pk)
-    if not request.user.id == spot.owner.id:
-      raise PermissionDenied('Unauthorized, you do not own this spot')
+    # if not request.user.id == spot.owner.id:
+    #   raise PermissionDenied('Unauthorized, you do not own this spot')
 
     data = SpotSerializer(spot).data
     return Response({ 'spot': data })
