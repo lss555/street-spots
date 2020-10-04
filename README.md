@@ -1,23 +1,72 @@
-Street Spots api
+Street Spots API
 
 About
+
 An application to create spots that other users and yourself can access.  Moved to a new town? New to skiing or snowboarding and want to find the best spots? Look no further
 
+Links:
+
+- Backend deployed site: https://street-spots.herokuapp.com/
+- Frontend repo: https://github.com/lss555/street-spots-client
+- Frontend deployed site: https://lss555.github.io/street-spots-client
+
+![streetspots](https://user-images.githubusercontent.com/60980631/93805308-c990cc00-fc04-11ea-9db8-662d5ad65897.png)
+
+Planning:
+
+For planning I used the ERD and Wireframes to plan out the big picture and then everyday before starting to work I would figure what needs to get done and then review documentation on that topic and build that component or piece of code.
+
 ERD and Wireframes
+
 https://imgur.com/a/WDrVDy0
 
-User Stories
-As a user I want to be able to create a spot
-As a user I want to be able to view other users spots
-As a user I want to be able to view most liked spots
-As a user I want to be able to search spot by location
-As a user I want to be able to view my spots
-As a user I want to be able to edit my spots
-As a user I want to be able to delete my spots
+User Stories:
 
-Set up instructions
+- As a user I want to be able to create a spot
+- As a user I want to be able to view other users spots
+- As a user I want to be able to view most liked spots
+- As a user I want to be able to search spot by location
+- As a user I want to be able to view my spots
+- As a user I want to be able to edit my spots
+- As a user I want to be able to delete my spots
 
-Fork and clone
-npm install
-npm start
-Edit project to your desire
+Authenication:
+| verb | URI pattern |
+|---------|--------|
+| `POST`  |  /sign-up |
+| `POST`  | /sign-in  |
+| `PATCH`  | /change-pw  |
+| `DELETE`  | /sign-out  |
+
+Spots:
+
+| verb | URI pattern |
+|---------|--------|
+| `POST`  |  /spots |
+| `GET`  | /spots  |
+| `GET`  | /spots/:id  |
+| `DELETE`  | /spots/:id  |
+| `PATCH`  | /spots/:id  |
+
+Technoligies used:
+
+- Django
+- PostgresSQL
+- React
+- JavaScript
+- HTML/CSS
+
+Unsolved problems:
+
+- AWS photo upload
+- Likes on posted spots
+- Ability to filter and search spots
+- User profiles
+
+Set Up:
+
+- Fork and Clone
+- Run pipenv shell in new root directory
+- Run pipenv install
+- make desired changes in text editor
+- Run python3 mangage.py runserver to test your changes
